@@ -18,12 +18,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # يضمن وجود Android SDK (وإصدار compileSdk 34) بغض النظر عن محتوى صورة الـ runner الافتراضية
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      # لا نعتمد على ملف gradlew/gradle-wrapper.jar المحلي (قد لا يكون موجودًا في هذا الأرشيف)
-      # بل نستخدم إجراء Gradle الرسمي الذي يقوم بتنزيل وتشغيل Gradle مباشرة بأمان.
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
